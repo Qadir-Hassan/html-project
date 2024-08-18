@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery/jquery.js"></script>
+    <script src="plugins/form-validation-plugin/dist/jquery.validate.js"></script>
+    <style>
+        .error{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" method="post" id="contactForm">
+        <label for="fname">First Name</label>
+        <input type="text" name="fname" placeholder="first name" id="fname">
+
+        <br>
+    </br>
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname" placeholder="last Name">
+      <br>
+
+      <label for="uname">User Name</label>
+    
+      <input type="text"  name="uname" placeholder="user name">
+      <br>
+        <input type="submit" value="submit">
+    </form>
+    
+
+    <script>
+
+        $("#contactForm").validate({
+            rules:{
+               fname : "required" ,
+               lname: "required",
+               uname:{
+                required: true,
+                minlength: 4,
+               }
+            },
+
+            messages:{
+                fname: "First Name is required",
+                lname:"Last Name is Required",
+                uname:{
+                    required:"User name is required",
+                    minlenght:"user name should be greater than  4 cvha"
+                }
+            }
+
+        })
+
+        
+    </script>
+</body>
+</html>
